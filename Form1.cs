@@ -24,20 +24,10 @@ namespace pertemuan9
             bersih();
             fokus();
         }
-
-        private void txtinput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void fokus()
         {
             txthasil.Focus();
             txthasil.Select(txthasil.Text.Length,1);
-        }
-        private void txthasil_TextChanged(object sender, EventArgs e)
-        {
-
         }
         private void bersih()
         {
@@ -46,16 +36,12 @@ namespace pertemuan9
             temp = 0;
             oper = ' ';
             oper1 = false;
-
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             bersih();
             fokus();
         }
-
-
         private void btnAngka_Click(object sender, EventArgs e)
         {
             Button btnAng = (Button)sender;
@@ -72,13 +58,13 @@ namespace pertemuan9
             txthasil.Text = txthasil.Text + btnAng.Text;
             fokus();
         }
-
         private void btnOperator_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Berhasil");
             Button op = (Button)sender;
             if (oper1 == false)
             {
-                if(txtinput.Text == "")
+                if (txtinput.Text == "")
                 {
                     temp = Convert.ToDouble(txthasil.Text);
                 }
@@ -86,7 +72,7 @@ namespace pertemuan9
                 {
                     if (oper == '+')
                     {
-                        temp = Convert.ToDouble(txthasil.Text);   
+                        temp = temp + Convert.ToDouble(txthasil.Text);   
                     }
                     else if (oper == '-')
                     {
@@ -127,6 +113,16 @@ namespace pertemuan9
                 oper = ' ';
             }
             fokus() ;
+        }
+
+        private void txtinput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txthasil_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
